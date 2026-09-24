@@ -1,4 +1,4 @@
-package pl.kansas.ctbot.parser;
+package com.kansas.ctbot.parser;
 
 public class GoogleSheetsParser {
 }

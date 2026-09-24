@@ -1,4 +1,4 @@
-package pl.kansas.ctbot.service;
+package com.kansas.ctbot.service;
 
 public class ScoreConversionService {
 }

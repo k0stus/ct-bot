@@ -1,4 +1,4 @@
-package pl.kansas.ctbot.bot;
+package com.kansas.ctbot.bot;
 
 public class CommandRouter {
 }
