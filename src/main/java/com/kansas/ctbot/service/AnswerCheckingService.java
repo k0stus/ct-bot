@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
  */
 public class AnswerCheckingService {
 
-    private static final Pattern MATCHING_PAIR = Pattern.compile("(\\p{Lu})(\\d+)");
+    //private static final Pattern MATCHING_PAIR = Pattern.compile("(\\p{Lu})(\\d+)");
 
     public List<QuestionResult> check(Variant variant, List<StudentAnswer> studentAnswers) {
         List<QuestionResult> results = new ArrayList<>();
@@ -50,13 +50,13 @@ public class AnswerCheckingService {
     }
 
     private QuestionResult checkMultipleChoice(MultipleChoiceQuestion q, String value) {
-        Set<String> given = splitIntoChars(value);
+        Set<String> given = AnswerFormats.splitIntoChars(value);
         int errors = symmetricDifferenceSize(q.correctOptions(), given);
         return byErrorCount(q.number(), q.maxScore(), q.partialScore(), errors);
     }
 
     private QuestionResult checkSequence(SequenceQuestion q, String value) {
-        List<String> given = splitIntoCharList(value);
+        List<String> given = AnswerFormats.splitIntoCharList(value);
         List<String> correct = q.correctOrder();
         int errors;
         if (given.size() != correct.size()) {
@@ -73,7 +73,7 @@ public class AnswerCheckingService {
     }
 
     private QuestionResult checkMatching(MatchingQuestion q, String value) {
-        Map<String, String> given = parseMatchingPairs(value);
+        Map<String, String> given = AnswerFormats.parseMatchingPairs(value);
         int errors = 0;
         for (Map.Entry<String, String> entry : q.correctMapping().entrySet()) {
             String givenValue = given.get(entry.getKey());
@@ -85,7 +85,7 @@ public class AnswerCheckingService {
     }
 
     private QuestionResult checkNumeric(NumericQuestion q, String value) {
-        String normalized = value.replace(',', '.');
+        String normalized = AnswerFormats.normalizeNumeric(value);
         boolean correct = normalized.equals(q.correctValue().trim());
         return new QuestionResult(q.number(), correct ? q.maxScore() : 0, q.maxScore(),
                 correct ? QuestionResult.Verdict.CORRECT : QuestionResult.Verdict.INCORRECT);
@@ -110,30 +110,30 @@ public class AnswerCheckingService {
         return new QuestionResult(number, 0, maxScore, QuestionResult.Verdict.INCORRECT);
     }
 
-    private Set<String> splitIntoChars(String value) {
-        Set<String> result = new LinkedHashSet<>();
-        for (char c : value.toCharArray()) {
-            result.add(String.valueOf(c));
-        }
-        return result;
-    }
-
-    private List<String> splitIntoCharList(String value) {
-        List<String> result = new ArrayList<>();
-        for (char c : value.toCharArray()) {
-            result.add(String.valueOf(c));
-        }
-        return result;
-    }
-
-    private Map<String, String> parseMatchingPairs(String value) {
-        Map<String, String> result = new HashMap<>();
-        Matcher matcher = MATCHING_PAIR.matcher(value);
-        while (matcher.find()) {
-            result.put(matcher.group(1), matcher.group(2));
-        }
-        return result;
-    }
+//    private Set<String> splitIntoChars(String value) {
+//        Set<String> result = new LinkedHashSet<>();
+//        for (char c : value.toCharArray()) {
+//            result.add(String.valueOf(c));
+//        }
+//        return result;
+//    }
+//
+//    private List<String> splitIntoCharList(String value) {
+//        List<String> result = new ArrayList<>();
+//        for (char c : value.toCharArray()) {
+//            result.add(String.valueOf(c));
+//        }
+//        return result;
+//    }
+//
+//    private Map<String, String> parseMatchingPairs(String value) {
+//        Map<String, String> result = new HashMap<>();
+//        Matcher matcher = MATCHING_PAIR.matcher(value);
+//        while (matcher.find()) {
+//            result.put(matcher.group(1), matcher.group(2));
+//        }
+//        return result;
+//    }
 
     private String normalizeText(String text, boolean caseInsensitive, boolean ignoreWhitespace) {
         String result = text.trim();
