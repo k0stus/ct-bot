@@ -1,7 +1,5 @@
 package com.kansas.ctbot.service;
 
-
-
 import com.kansas.ctbot.model.MatchingQuestion;
 import com.kansas.ctbot.model.MultipleChoiceQuestion;
 import com.kansas.ctbot.model.NumericQuestion;
