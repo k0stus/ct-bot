@@ -1,0 +1,83 @@
+Source-Available License: View and Evaluate Only
+Version 1.0
+
+Copyright (c) 2026 Kanstantsin Sasnouski. All rights reserved.
+
+This is a custom source-available license. It is NOT an open source license
+and the Software must not be described as open source.
+
+1. Definitions
+
+   "Software" means the source code, documentation, templates, example files,
+   and all other materials contained in this repository.
+
+   "Licensor" means the copyright holder named above.
+
+   "You" means any individual or entity exercising permissions granted by this
+   license.
+
+2. Permitted use
+
+   Subject to the terms of this license, You may, free of charge:
+
+   (a) view and read the Software, including through the GitHub web interface;
+
+   (b) clone or download a copy of the Software and build, run, and test it
+       locally, solely to evaluate the Licensor's skills and the quality of
+       the work (for example, as part of a hiring or recruitment process) or
+       for personal, non-commercial study.
+
+3. Restrictions
+
+   Except as expressly permitted in Section 2, You may not, without the prior
+   written permission of the Licensor:
+
+   (a) use the Software for any other purpose, including operating it as a
+       service, using it with real students, tutors, or other end users, or
+       any commercial, production, or operational use;
+
+   (b) copy, modify, adapt, translate, or create derivative works of the
+       Software, or reuse any substantial part of it in another project;
+
+   (c) distribute, publish, sublicense, sell, rent, lend, or otherwise make
+       the Software available to third parties. Forking on GitHub is tolerated
+       only to the extent required by GitHub's Terms of Service; any such fork
+       remains subject to this license and receives no additional rights;
+
+   (d) remove or alter any copyright or license notice.
+
+4. Ownership
+
+   The Software is licensed, not sold. All rights not expressly granted in this
+   license are reserved by the Licensor. No rights are granted by implication
+   or estoppel.
+
+5. Third-party materials
+
+   The Software depends on third-party libraries (such as Apache POI, Jackson,
+   and the TelegramBots library) and may reference publicly available data.
+   Those materials remain under their own licenses and terms, and this license
+   does not apply to them.
+
+6. Termination
+
+   Your rights under this license terminate automatically if You breach any of
+   its terms. On termination You must delete all copies of the Software in
+   Your possession.
+
+7. No warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+8. Limitation of liability
+
+   IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+9. Permission requests
+
+   To request permission for any use not covered above, contact the Licensor
+   through the GitHub profile that owns this repository.
